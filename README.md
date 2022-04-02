@@ -13,10 +13,10 @@ Create a database with the command `CREATE DATABASE scheduler_development;`.
 Copy the `.env.example` file to `.env.development` and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
 
 ```
-PGHOST=localhost
-PGUSER=development
-PGDATABASE=scheduler_development
-PGPASSWORD=development
+PGHOST=ec2-52-73-155-171.compute-1.amazonaws.com
+PGUSER=oyzcfxvwtrgpwn
+PGDATABASE=dbuofer1kmganp
+PGPASSWORD=b4418f5e4ca4c7f8efac25b023fa4a5d74f31b53d3c2184d3bd4270b75efd8ae
 PGPORT=5432
 ```
 
@@ -34,11 +34,13 @@ The `development` data is random. Each time we seed we expect to see different a
 ## Run The Server
 
 Running the server normally
+
 ```sh
 npm start
 ```
 
 Running the server so it returns an error when saving/deleting for testing the client's error handling capabilities
+
 ```sh
 npm run error
 ```
@@ -53,13 +55,13 @@ Response
 
 ```json
 [
-  {
-    "id": 1,
-    "name": "Monday",
-    "appointments": [1, 2],
-    "interviewers": [1, 2],
-    "spots": 0
-  }
+	{
+		"id": 1,
+		"name": "Monday",
+		"appointments": [1, 2],
+		"interviewers": [1, 2],
+		"spots": 0
+	}
 ]
 ```
 
@@ -71,22 +73,22 @@ Response:
 
 ```json
 {
-  "1": {
-    "id": 1,
-    "time": "12pm",
-    "interview": {
-      "student": "Lydia Miller-Jones",
-      "interviewer": 1
-    }
-  },
-  "2": {
-    "id": 2,
-    "time": "1pm",
-    "interview": {
-      "student": "Archie Cohen",
-      "interviewer": 2
-    }
-  }
+	"1": {
+		"id": 1,
+		"time": "12pm",
+		"interview": {
+			"student": "Lydia Miller-Jones",
+			"interviewer": 1
+		}
+	},
+	"2": {
+		"id": 2,
+		"time": "1pm",
+		"interview": {
+			"student": "Archie Cohen",
+			"interviewer": 2
+		}
+	}
 }
 ```
 
@@ -113,15 +115,15 @@ Response:
 
 ```json
 {
-  "1": {
-    "id": 1,
-    "name": "Sylvia Palmer",
-    "avatar": "https://i.imgur.com/LpaY82x.png"
-  },
-  "2": {
-    "id": 2,
-    "name": "Tori Malcolm",
-    "avatar": "https://i.imgur.com/Nmx0Qxo.png"
-  }
+	"1": {
+		"id": 1,
+		"name": "Sylvia Palmer",
+		"avatar": "https://i.imgur.com/LpaY82x.png"
+	},
+	"2": {
+		"id": 2,
+		"name": "Tori Malcolm",
+		"avatar": "https://i.imgur.com/Nmx0Qxo.png"
+	}
 }
 ```
